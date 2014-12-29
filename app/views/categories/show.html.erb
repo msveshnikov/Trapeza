@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @category.Title %>
-</p>
+</h1>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= render @recipes %>
+
 <%= link_to 'Back', categories_path %>

@@ -1,3 +1,5 @@
+# encoding: utf-8
+#
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
