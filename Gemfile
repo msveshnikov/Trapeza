@@ -11,8 +11,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
-gem 'mysql2', group: [:production, :staging]
+gem 'sqlite3' #, group: :development
+#gem 'mysql2', group: [:production, :staging]
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
