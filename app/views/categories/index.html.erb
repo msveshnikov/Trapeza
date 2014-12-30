@@ -1,14 +1,10 @@
 <h1>МЕНЮ</h1>
 
-<table>
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= link_to category.Title, category %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="words">
 
-<br>
+<% @categories.each do |category| %>
+    <h2><%= category.Title %></h2>
+    <%= render category.categories %>
+<% end %>
 
+</div>

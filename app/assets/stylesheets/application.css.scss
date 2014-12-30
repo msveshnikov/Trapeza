@@ -36,22 +36,24 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: 'Lobster', Verdana, Arial, Helvetica, sans-serif;
-  font-size: 2em;
+  font-size: 4em;
 //  letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-family: 'Lobster', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 18px;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 15px;
+//  text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: #666666;
 }
 
 h3 {
+  font-size: 12px;
   color: #e88d1b;
 }
 
@@ -70,6 +72,10 @@ p {
 .user {
   color: #dbd919;
   font-weight: bold;
+}
+
+.subcat {
+//  font-family: 'Arial';
 }
 
 .image {
@@ -108,12 +114,11 @@ a {
 }
 
 .words {
-  column-count: 3;
+  column-count: 2;
   column-gap: 10px;
-  color: rgb(219, 225, 227);
-  -moz-column-count: 3;
+  -moz-column-count: 2;
   -moz-column-gap: 10px;
-  -webkit-column-count: 3;
+  -webkit-column-count: 2;
   -webkit-column-gap: 10px;
 }
 
