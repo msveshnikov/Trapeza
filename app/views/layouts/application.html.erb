@@ -2,13 +2,61 @@
 <html>
 <head>
   <title>Trapeza</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!--<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto Slab">-->
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="description" content="Сонник. Интерактивный толкователь снов. Толкования снов и сновидений, разгаданные самыми авторитетными предсказателями. Лучший сонник в рунете">
+  <meta name="keywords" content="сонник, толкование снов, соник, сновидения, сонник толкование, вещие сны, вещий сон, сновидение, толкователь снов, толкование снов, значение сна, мистика, приснилось, предсказание, sonnik, гороскоп, астрология, индивидуальный гороскоп, гороскоп совместимости">
+
+  <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-33888137-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+  </script>
 </head>
 <body>
 
-<%= yield %>
+<%= link_to image_tag("topbar.jpg"), root_path %>
+
+<aside class="span7">
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+  <br><br>
+
+</aside>
+<div class="span3">
+
+  <br>
+  <%= link_to "Форум", "http://extender.tk", target: "_blank" %>
+  <br>
+  <%= link_to "Мобильная версия", mobile: 1 %>
+  <br><br>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- my -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-1351673544337847"
+       data-ad-slot="2591225138"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<%= image_tag("footer.jpg") %>
 
 </body>
 </html>
