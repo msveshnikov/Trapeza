@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.all
+    @categories = Category.where("ParentCategory_ID = 0")
   end
 
   # GET /categories/1

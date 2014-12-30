@@ -1,7 +1,2 @@
-<td><%= recipe.Date %></td>
-<td><%= recipe.Title %></td>
-<td><%= recipe.category_id %></td>
-<td><%= link_to 'Show', recipe %></td>
-<td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-<td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to recipe.Title, recipe %></td>
 <br>
