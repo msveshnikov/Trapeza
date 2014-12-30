@@ -5,10 +5,10 @@
   <%= @recipe.Date %>
 </p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
+
   <%= @recipe.Title %>
-</p>
+</h1>
 
 <p>
   <strong>Desc:</strong>
@@ -26,5 +26,4 @@
   <%= @recipe.category_id %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
