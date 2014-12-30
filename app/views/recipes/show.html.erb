@@ -11,7 +11,6 @@
 </h1>
 
 <p>
-  <strong>Desc:</strong>
   <%= @recipe.Description.mb_chars.html_safe %>
 </p>
 
@@ -20,9 +19,9 @@
   <%= @recipe.Media %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @recipe.category_id %>
-</p>
+<% images.each do |i| %>
+    <%= image_tag i %>
+<% end %>
 
-<%= link_to 'Back', recipes_path %>
+
+<%= link_to 'Back', root_path %>
