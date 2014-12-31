@@ -2,6 +2,22 @@
   <%= @recipe.Title %>
 </h1>
 
+<div class="breakoutr">
+  <h2>Состав:</h2>
+  <% ingredients.each do |e| %>
+      <h3>    <%= e["name"] %> </h3>
+      <% e["childs"].each do |l| %>
+          <tr>
+            <td> <%= l["id"] %>&nbsp</td>
+            <td> <%= l["count"] %> </td>
+            <td> <%= l["type"] %> </td>
+            <td> <%= l["comment"] %> </td>
+          </tr>
+          <br>
+      <% end %>
+  <% end %>
+</div>
+
 <p>
   <%= @recipe.Description.mb_chars.html_safe %>
 </p>
@@ -18,20 +34,6 @@
        end %>
 <br>
 
-<h2>Состав:</h2>
-<% ingredients.each do |e| %>
-    <h3>    <%= e["name"] %> </h3>
-    <table>
-      <% e["childs"].each do |l| %>
-          <tr>
-            <td> <%= l["id"] %> </td>
-            <td> <%= l["count"] %> </td>
-            <td> <%= l["type"] %> </td>
-            <td> <%= l["comment"] %> </td>
-          </tr>
-      <% end %>
-    </table>
-<% end %>
 
 <br><br>
 <%= link_to 'Главная', root_path %>

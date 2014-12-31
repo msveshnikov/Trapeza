@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 end
 
-#TODO: ingridients
-#TODO: search for recipe and ingridient
+#TODO: ingredients
+#TODO: search for recipe and ingredient
 #TODO: breadcrumbs
 #TODO: +1 button
 #TODO: mobile site
