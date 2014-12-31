@@ -1,12 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Date:</strong>
-  <%= @recipe.Date %>
+  <strong>Дата:</strong>
+  <%= @recipe.PublishDate %>
 </p>
 
 <h1>
-
   <%= @recipe.Title %>
 </h1>
 
@@ -14,14 +11,17 @@
   <%= @recipe.Description.mb_chars.html_safe %>
 </p>
 
-<p>
-  <strong>Desc:</strong>
-  <%= @recipe.Media %>
-</p>
+<%= image_tag array[0]["src_big"] if @recipe.isStepPhoto==0 %>
 
-<% images.each do |i| %>
-    <%= image_tag i %>
-<% end %>
+<% if @recipe.isStepPhoto==1
+     array.each do |e| %>
+        <p>
+          <%= e["text_ru"] %>
+        </p>
+        <%= image_tag e["src_big"] %>
+    <% end
+       end %>
 
 
+<br><br>
 <%= link_to 'Back', root_path %>

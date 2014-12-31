@@ -1,8 +1,7 @@
-require "uri"
+require 'json'
 
 module RecipesHelper
-
-  def images
-    URI.extract(@recipe.Media.gsub(/\\/,""), /http(s)?|mailto/)
+  def array
+    JSON.parse(@recipe.Media)["photos"]
   end
 end
