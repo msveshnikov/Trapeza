@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show]
+  before_action :check_for_mobile
+
 
   # GET /categories
   def index
@@ -8,7 +10,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @recipes=@category.recipes
+    @recipes=page(@category.recipes)
   end
 
   private

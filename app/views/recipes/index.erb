@@ -1,0 +1,17 @@
+
+<h1>
+  Результаты поиска
+</h1>
+
+
+
+<%= render @recipes %>
+<%= will_paginate if !mobile_device? %>
+
+<% if @recipes.size==0 %>
+    Не найдено
+    <br>
+<% end %>
+
+<br>
+<%= link_to 'Главная', root_path %>

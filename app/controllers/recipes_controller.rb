@@ -2,10 +2,16 @@
 #
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_mobile
 
   # GET /recipes
   def index
-    @recipes = Recipe.all
+    if params[:search]
+      @recipes = page(Recipe.search(params[:search]))
+      redirect_to recipe_path(@recipes[0]) if @recipes.size==1
+    else
+      @recipes = page(Recipe)
+    end
   end
 
   # GET /recipes/1
@@ -48,13 +54,15 @@ class RecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def recipe_params
-      params.require(:recipe).permit(:Date, :Title, :category_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def recipe_params
+    params.require(:recipe).permit(:Date, :Title, :category_id)
+  end
+
+
 end

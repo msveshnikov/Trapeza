@@ -1,0 +1,5 @@
+<%= form_for(@comment) do |f| %>
+    <%= f.text_field :content, placeholder: "Написать комментарий..." %>
+    <%= f.hidden_field :word_id %>
+    <%= f.submit "Отправить" %>
+<% end %>

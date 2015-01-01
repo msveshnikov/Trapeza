@@ -29,7 +29,7 @@
 
 <%= link_to image_tag("top.jpg"), root_path %>
 <br><br>
-<aside class="span11">
+<aside class="span7">
   <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
@@ -37,23 +37,24 @@
   <br><br>
 
 </aside>
-<!--<aside class="span3">-->
+<aside class="span3">
 
-<!--&lt;!&ndash;<br>&ndash;&gt;-->
-<!--&lt;!&ndash;<%= link_to "Форум", "http://extender.tk", target: "_blank" %>&ndash;&gt;-->
-<!--&lt;!&ndash;<br>&ndash;&gt;-->
-<!--&lt;!&ndash;<%= link_to "Мобильная версия", mobile: 1 %>&ndash;&gt;-->
-<!--<br><br>-->
-<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!--&lt;!&ndash; my &ndash;&gt;-->
-<!--<ins class="adsbygoogle"-->
-<!--style="display:inline-block;width:300px;height:600px"-->
-<!--data-ad-client="ca-pub-1351673544337847"-->
-<!--data-ad-slot="2591225138"></ins>-->
-<!--<script>-->
-<!--      (adsbygoogle = window.adsbygoogle || []).push({}); -->
-<!--</script>-->
-<!--</aside>-->
+  <br>
+  <%= link_to "Форум", "http://extender.tk", target: "_blank" %>
+  <br>
+  <%= link_to "Мобильная версия", mobile: 1 %>
+  <br><br>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-1351673544337847"
+       data-ad-slot="2591225138"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</aside>
+
 <br>
 <br>
 <%= image_tag("footer.jpg") %>

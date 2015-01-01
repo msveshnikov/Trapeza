@@ -2,8 +2,8 @@
 <h1>
   <%= @category.Title %>
 </h1>
-
 <%= render @recipes %>
+<%= will_paginate @recipes if !mobile_device? %>
 
 <br>
 <%= link_to 'Главная', root_path %>
