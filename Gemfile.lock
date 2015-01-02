@@ -31,6 +31,7 @@ GEM
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    breadcrumbs_on_rails (2.3.0)
     builder (3.1.4)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
@@ -161,6 +162,7 @@ DEPENDENCIES
   bcrypt
   bootstrap-sass (= 2.3.2.0)
   bootstrap-will_paginate
+  breadcrumbs_on_rails
   capistrano-passenger
   capistrano-rails
   jquery-rails

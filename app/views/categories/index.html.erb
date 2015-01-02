@@ -5,12 +5,13 @@
 <h1>МЕНЮ</h1>
 
 <div class="words">
-
   <% @categories.each do |category| %>
       <h2><%= category.Title %></h2>
       <%= render category.categories %>
       <%= render category if category.categories.blank? %>
 
   <% end %>
-<br><br><br><br><br><br>
+  <br><br><br><br>
 </div>
+<br><br>
+© MaxSoft, 2015

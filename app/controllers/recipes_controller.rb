@@ -1,5 +1,4 @@
 # encoding: utf-8
-#
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :check_for_mobile
@@ -57,6 +56,11 @@ class RecipesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
+    @category = Category.find(@recipe.subcategory_id)
+    @parent = Category.find(@category.ParentCategory_ID) if @category.ParentCategory_ID != 0
+    add_breadcrumb "МЕНЮ", :root_path
+    add_breadcrumb @parent.Title, @parent unless @parent.blank?
+    add_breadcrumb @category.Title, @category
   end
 
   # Only allow a trusted parameter "white list" through.

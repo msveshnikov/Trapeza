@@ -1,9 +1,10 @@
-
 <h1>
   <%= @category.Title %>
 </h1>
-<%= render @recipes %>
+<%= render @recipes if @categories.blank? %>
 <%= will_paginate @recipes if !mobile_device? %>
+<%= render @categories %>
 
 <br>
 <%= link_to 'Главная', root_path %>
+© MaxSoft, 2015

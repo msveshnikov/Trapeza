@@ -1,10 +1,11 @@
 @import "bootstrap";
 @import url('http://fonts.googleapis.com/css?family=Lobster');
+@import url('http://fonts.googleapis.com/css?family=Ubuntu');
 
 body {
   padding: 0;
-  font-family: 'Verdana', Verdana, Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: 'Ubuntu', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 15px;
   max-width: 885px;
   margin: 0 auto !important;
   float: none !important;
@@ -35,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-family: 'Lobster', Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Lobster', Times, serif;
   font-size: 4em;
 //  letter-spacing: -2px;
   margin-bottom: 30px;
@@ -43,7 +44,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Lobster', Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Lobster', Times, serif;
   font-size: 18px;
   letter-spacing: -1px;
   margin-bottom: 15px;
@@ -74,10 +75,6 @@ p {
 .user {
   color: #dbd919;
   font-weight: bold;
-}
-
-.subcat {
-//  font-family: 'Arial';
 }
 
 .image {
@@ -133,5 +130,9 @@ input, textarea, select, .uneditable-input {
 
   text-align: left;
   line-height: 100%;
+
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 

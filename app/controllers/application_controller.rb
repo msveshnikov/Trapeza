@@ -32,13 +32,14 @@ class ApplicationController < ActionController::Base
 
   def page(a)
     return a if mobile_device?
-    a.paginate(page: params[:page], per_page: 20)
+    a.paginate(page: params[:page], per_page: 50)
   end
 end
 
 #TODO: ingredients +
 #TODO: search for recipe and ingredient +
-#TODO: breadcrumbs
+#TODO: breadcrumbs +
+#TODO: all attrs form recipes
 #TODO: +1 button
 #TODO: mobile site +
 #TODO: ratings & votes

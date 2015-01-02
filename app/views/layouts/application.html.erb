@@ -28,6 +28,11 @@
 <body>
 
 <%= link_to image_tag("top.jpg"), root_path %>
+
+<ol class="breadcrumb">
+  <%= render_breadcrumbs :tag => :li, :separator => " · " %>
+</ol>
+
 <br><br>
 <aside class="span7">
   <% flash.each do |key, value| %>
@@ -55,8 +60,7 @@
   </script>
 </aside>
 
-<br>
-<br>
+
 <%= image_tag("footer.jpg") %>
 
 </body>
