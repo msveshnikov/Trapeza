@@ -3,6 +3,7 @@
 <head>
   <title> <%= full_title(yield(:title)) %> </title>
   <%= stylesheet_link_tag "mobile" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
   <meta name="MobileOptimized" content="320"/>
   <meta name="HandheldFriendly" content="true"/>

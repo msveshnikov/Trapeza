@@ -21,8 +21,7 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "ingredients", force: true do |t|
-    t.text    "TitleRU"
-    t.text    "TitleEN"
+    t.text "Title"
     t.integer "Gramm"
     t.decimal "Proteins"
     t.decimal "Fats"
@@ -37,7 +36,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.decimal "Date"
     t.text    "Title"
     t.text    "TitleSearch"
-    t.text    "Description"
+    t.binary "Description"
     t.text    "Media"
     t.text    "MediaVK"
     t.integer "Group_ID"
@@ -45,15 +44,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.decimal "PublishDate"
     t.integer "isStepPhoto"
     t.integer "subcategory_id"
-    t.text    "TitleEN"
-    t.text    "DescriptionEN"
     t.text    "Ingredients"
     t.text    "ServingsNumber"
     t.text    "RecipeAuthor"
     t.integer "TimePrepare"
     t.integer "TimeCooking"
-    t.text    "ServingsNumberEN"
-    t.text    "RecipeAuthorEN"
     t.decimal "Rating"
     t.integer "VotesCount"
     t.integer "CommentsCount"
@@ -78,7 +73,7 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "types", force: true do |t|
-    t.text "TitleRU"
+    t.text "title"
   end
 
 end
