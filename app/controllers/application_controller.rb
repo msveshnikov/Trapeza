@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     if session[:mobile_override]
       (session[:mobile_override] == "1") || (session[:mobile_override] == "2")
     else
-      (request.user_agent =~ /Mobile|webOS/)
+      (request.user_agent =~ /Mobile|webOS|Android/)
     end
   end
 
@@ -40,6 +40,6 @@ end
 #TODO: search for recipe and ingredient +
 #TODO: breadcrumbs +
 #TODO: all attrs form recipes
-#TODO: +1 button
+#TODO: +1 button +
 #TODO: mobile site +
 #TODO: ratings & votes
