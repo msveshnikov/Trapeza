@@ -9,7 +9,7 @@ gem 'bootstrap-will_paginate'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
-gem "breadcrumbs_on_rails"
+gem 'breadcrumbs_on_rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3' #, group: :development

@@ -4,6 +4,9 @@ Trapeza::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   resources :sessions, only: [:create, :destroy]
 
+  resources :comments, only: [:create, :destroy]
+  resources :users, only: :index
+
   resources :recipes
   resources :categories
   root 'categories#index'
