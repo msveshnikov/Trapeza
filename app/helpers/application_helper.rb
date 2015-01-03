@@ -10,4 +10,10 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def getfavs
+    s=cookies[:fav]
+    s="" if s.blank?
+    return s.split(",")
+  end
 end

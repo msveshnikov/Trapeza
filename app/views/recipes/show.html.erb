@@ -4,6 +4,8 @@
   <%= @recipe.Title %>
 </h1>
 
+<%= link_to image_tag("star-"+getfav(@recipe.id)+".png", class: "fav", id: @recipe.id, style: "float=right;") %>
+
 <% if !ingredients.blank? %>
     <div class="breakoutr">
       <h2>Ингредиенты:</h2>

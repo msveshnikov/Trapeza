@@ -38,6 +38,20 @@ class RecipesController < ApplicationController
     end
   end
 
+  def toggle
+    s=cookies[:fav]
+    s="" if s.blank?
+    f=s.split(",")
+    if f.include? params[:id]
+      f.delete params[:id]
+      render text: "off"
+    else
+      f << params[:id]
+      render text: "on"
+    end
+    cookies.permanent[:fav]=f.join(",")
+  end
+
   # PATCH/PUT /recipes/1
   # def update
   #   if @recipe.update(recipe_params)

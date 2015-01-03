@@ -7,7 +7,9 @@ Trapeza::Application.routes.draw do
   resources :comments, only: [:create, :destroy]
   resources :users, only: :index
 
+  get 'recipes/toggle/:id', to: 'recipes#toggle'
   resources :recipes
   resources :categories
   root 'categories#index'
+
 end
