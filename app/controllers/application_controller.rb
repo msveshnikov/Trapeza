@@ -45,3 +45,4 @@ end
 #TODO: post photo and comments
 #TODO: create own recipes
 #TODO: search for ingredients
+#TODO: favourites in session cookie
