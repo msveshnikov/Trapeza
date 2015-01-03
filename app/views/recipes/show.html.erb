@@ -45,18 +45,45 @@
         path: '/assets'
     });
 </script>
-
 <br>
+
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <g:plusone></g:plusone>
+
 <div class="fb-like" data-href="<%= recipe_url @recipe %>"
      data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-<!-- Put this div tag to the place, where the Like block will be -->
-<div id="vk_like"></div>
-<script type="text/javascript">
-    VK.Widgets.Like("vk_like", {type: "button"});
-</script>
 
+<% if !request.host.include? "localhost" %>
+    <div id="vk_like"></div>
+    <script type="text/javascript">
+        VK.Widgets.Like("vk_like", {type: "button"});
+    </script>
+<% end %>
+
+<% if @comments.count > 0 %>
+    <h3>Комментариев (<%= @comments.count %>)</h3>
+    <table>
+      <%= render @comments %>
+    </table>
+<% end
+
+   @comment = @recipe.comments.build %>
+
+<section>
+  <%= render 'shared/comment_form' if current_user %>
+</section>
+
+<br><br>
+<% if current_user %>
+    <img src="<%= current_user.image %>" height="42" width="42">
+    &nbsp&nbsp Вход выполнен <%= current_user.name %> &nbsp&nbsp
+    <%= link_to "Выйти", signout_path, id: "sign_out" %>
+<% else %>
+    Войдите, чтобы хранить историю снов и делиться комментариями <br>
+    <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
+    <%= link_to image_tag("facebook.png", width: 150), "/auth/facebook", id: "sign_in" %>
+    <%= link_to link_to image_tag("vkontakte.png", width: 150), "/auth/vkontakte", id: "sign_in" %>
+<% end %>
 
 <br><br>
 <%= link_to 'Главная', root_path %>

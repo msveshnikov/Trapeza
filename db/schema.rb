@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141125103127) do
 
   create_table "categories", force: true do |t|
     t.text    "Title"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "ParentCategory_ID"
     t.integer "Language_ID"
   end
+
+  create_table "comments", force: true do |t|
+    t.string "content"
+    t.integer "user_id"
+    t.integer "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["recipe_id", "created_at"], name: "index_comments_on_recipe_id_and_created_at"
 
   create_table "ingredients", force: true do |t|
     t.text "Title"
@@ -74,6 +84,18 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "types", force: true do |t|
     t.text "title"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "email"
+    t.string "image"
   end
 
 end

@@ -1,0 +1,28 @@
+<tr>
+  <td class="image">
+    <img src="<%= comment.user.image %>" height="50">
+  </td>
+  <td>
+      <span class="user">
+      <%= comment.user.name %>
+      </span>
+      <span class="timestamp"> •
+        <%= time_ago_in_words(comment.created_at) %> назад
+      </span>
+    <br>
+      <span class="comment">
+        <%= comment.content %>
+      </span>
+    <br>
+      <span class="timestamp">
+      <% if current_user == comment.user %>
+          <%= link_to "Удалить", comment_path(comment, recipe_id: comment.recipe_id), method: :delete,
+                      data: {confirm: "Вы уверены?"},
+                      title: "Удалить комментарий" if !mobile_device? %>
+      <% end %>
+      </span>
+  </td>
+</tr>
+<tr class="image">
+</tr>
+
