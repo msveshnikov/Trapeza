@@ -8,24 +8,6 @@ body {
   max-width: 885px;
   margin: 0 auto !important;
   float: none !important;
-//  background-color: #0F2C7C;
-//  color: #000000;
-}
-
-.circular {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  -webkit-border-radius: 150px;
-  -moz-border-radius: 150px;
-  background: url(http://link-to-your/image.jpg) no-repeat;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
 }
 
 /* typography */
@@ -37,7 +19,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-family: 'Lobster', Times, serif;
   font-size: 4em;
-//  letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -48,7 +29,6 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 15px;
   margin-top: 15px;
-//  text-align: center;
   font-weight: normal;
   color: #666666;
 }
@@ -63,7 +43,6 @@ p {
   text-align: justify;
   line-height: 1.5em;
   margin: 20px;
-//  width: 550px;
 }
 
 .timestamp {
@@ -92,14 +71,6 @@ a {
   color: #5b61ff;
 }
 
-.button {
-  //  background-color: #2e44d1;
-  color: #fbf9ff;
-  padding: 5px 10px;
-  line-height: 2;
-  margin: 10px;
-}
-
 .words {
   column-count: 2;
   column-gap: 10px;
@@ -118,18 +89,13 @@ input, textarea, select, .uneditable-input {
 }
 
 .breakoutr {
-//  float: right;
   width: 50%;
-
   padding: 10px;
   margin-left: 10px;
-
   background-color: #deb78d;
   color: #000;
-
   text-align: left;
   line-height: 100%;
-
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
