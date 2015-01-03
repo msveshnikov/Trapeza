@@ -1,6 +1,6 @@
 <%= form_for(@comment) do |f| %>
     <div class="field span5">
-      <%= f.text_area :content, size: "30x10", placeholder: "Написать комментарий" %>
+      <%= f.text_area :content, size: "30x5", placeholder: "Написать комментарий" %>
     </div>
     <%= f.hidden_field :recipe_id %>
     <%= f.submit "Отправить", class: "offset1 btn btn-large btn-primary" %>

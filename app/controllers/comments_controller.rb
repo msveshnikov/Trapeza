@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = Comment.create(comment_params)
     if @comment.save
       flash[:success] = "Комментарий создан!"
     else
