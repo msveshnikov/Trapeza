@@ -59,6 +59,7 @@
         VK.Widgets.Like("vk_like", {type: "button"});
     </script>
 <% end %>
+<br><br>
 
 <% if @comments.count > 0 %>
     <h3>Комментариев (<%= @comments.count %>)</h3>
@@ -74,15 +75,17 @@
 </section>
 
 <br><br>
+<% session[:recipe_id]= @recipe.id %>
 <% if current_user %>
     <img src="<%= current_user.image %>" height="42" width="42">
     &nbsp&nbsp Вход выполнен <%= current_user.name %> &nbsp&nbsp
     <%= link_to "Выйти", signout_path, id: "sign_out" %>
 <% else %>
-    Войдите, чтобы хранить историю снов и делиться комментариями <br>
+    Войдите чтобы написать комментарий: <br>
+
     <%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>
     <%= link_to image_tag("facebook.png", width: 150), "/auth/facebook", id: "sign_in" %>
-    <%= link_to link_to image_tag("vkontakte.png", width: 150), "/auth/vkontakte", id: "sign_in" %>
+    <%= link_to image_tag("vkontakte.png", width: 150), "/auth/vkontakte", id: "sign_in" %>
 <% end %>
 
 <br><br>
