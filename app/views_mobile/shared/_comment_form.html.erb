@@ -1,5 +1,5 @@
 <%= form_for(@comment) do |f| %>
-    <%= f.text_field :content, placeholder: "Написать комментарий" %>
+    <%= f.text_field :content, placeholder: "Мое мнение" %>
     <%= f.hidden_field :recipe_id %>
     <%= f.submit "Отправить" %>
 <% end %>

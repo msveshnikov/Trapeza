@@ -4,7 +4,7 @@
 body {
   padding: 3px;
   font-family: 'Cuprum', Verdana, Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 14pt;
   margin: 10px;
 }
 
@@ -31,13 +31,13 @@ h2 {
 }
 
 h3 {
-  font-size: 12px;
+  font-size: 1.0em;
   color: #040200;
 }
 
 p {
   font-size: 1.0em;
-  text-align: justify;
+  //  text-align: justify;
   line-height: 1.3em;
   margin-bottom: 30px;
 }
@@ -72,7 +72,7 @@ a {
 /* forms */
 
 input, textarea, button, select {
-  width: 40%;
+  width: 45%;
   font-family: 'Cuprum', Verdana, Arial, Helvetica, sans-serif;
   font-size: 1.0em;
   height: 40px;
@@ -80,7 +80,7 @@ input, textarea, button, select {
 }
 
 .breakoutr {
-  width: 50%;
+  width: 75%;
   padding: 10px;
   margin-left: 10px;
   background-color: #deb78d;
