@@ -10,12 +10,10 @@
       <% ingredients.each do |e| %>
           <h3> <%= e["name"] %> </h3>
           <% e["childs"].each do |l| %>
-              <tr>
-                <td> <%= l["id"] %>&nbsp</td>
-                <td> <%= l["count"] %> </td>
-                <td> <%= l["type"] %> </td>
-                <td> <%= l["comment"] %> </td>
-              </tr>
+              <%= l["id"] %>&nbsp
+              <%= l["count"] %>
+              <%= l["type"] %>
+              <%= l["comment"] %>
               <br>
           <% end %>
       <% end %>
@@ -74,23 +72,6 @@
   <%= render 'shared/comment_form' %>
 </section>
 
-<!--<br><br>-->
-<!--
-<% session[:recipe_id]= @recipe.id %>-->
-<!--
-<% if current_user %>-->
-    <!--<img src="<%= current_user.image %>" height="42" width="42">-->
-    <!--&nbsp&nbsp Вход выполнен <%= current_user.name %> &nbsp&nbsp-->
-    <!--<%= link_to "Выйти", signout_path, id: "sign_out" %>-->
-    <!--
-<% else %>-->
-    <!--Войдите чтобы написать комментарий: <br>-->
-
-    <!--<%= link_to image_tag("signin.png", width: 150), "/auth/google_oauth2", id: "sign_in" %>-->
-    <!--<%= link_to image_tag("facebook.png", width: 150), "/auth/facebook", id: "sign_in" %>-->
-    <!--<%= link_to image_tag("vkontakte.png", width: 150), "/auth/vkontakte", id: "sign_in" %>-->
-    <!--
-<% end %>-->
 
 <br><br>
 <%= link_to 'Главная', root_path %>
