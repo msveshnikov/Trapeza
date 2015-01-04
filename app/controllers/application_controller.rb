@@ -30,8 +30,8 @@ class ApplicationController < ActionController::Base
   end
 
   def page(a)
-    return a if mobile_device?
-    a.paginate(page: params[:page], per_page: 50)
+    #return a if mobile_device?
+    a.paginate(page: params[:page], per_page: mobile_device? ? 200 : 50)
   end
 end
 
@@ -42,7 +42,8 @@ end
 #TODO: mobile site +
 #TODO: ratings & votes +
 
-#TODO: post photo and comments
+#TODO: post photo
+#TODO: post comments +
 #TODO: create own recipes
 #TODO: search for ingredients
-#TODO: favourites in session cookie
+#TODO: favourites in session cookie +
