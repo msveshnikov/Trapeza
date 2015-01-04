@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
       @recipes = page(Recipe.search(params[:search]))
       redirect_to recipe_path(@recipes[0]) if @recipes.size==1
     else
-      @recipes = page(Recipe)
+      @recipes = page(Recipe.all)
     end
   end
 
