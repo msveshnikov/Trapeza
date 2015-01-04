@@ -4,7 +4,7 @@ $(document).on('page:change', function () {
             url: "/recipes/toggle/" + $(this).attr("id"),
             type: "GET",
             success: function (text) {
-                $(".fav").attr('src', "/assets/star-" + text + ".png");
+                $(".fav").attr('src', "/assets/" + text);
             }
         });
         return false;

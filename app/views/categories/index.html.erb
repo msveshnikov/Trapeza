@@ -5,9 +5,12 @@
 <h1>МЕНЮ</h1>
 
 <div class="words">
-  <h2>Избранные рецепты</h2>
-  <% getfavs.each do |recipe| %>
-      <%= render Recipe.find(recipe) %>
+
+  <% if !getfavs.blank? %>
+      <h2>Избранные рецепты</h2>
+      <% getfavs.each do |recipe| %>
+          <%= render Recipe.find(recipe) %>
+      <% end %>
   <% end %>
 
   <% @categories.each do |category| %>

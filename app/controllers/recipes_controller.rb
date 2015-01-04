@@ -44,10 +44,10 @@ class RecipesController < ApplicationController
     f=s.split(",")
     if f.include? params[:id]
       f.delete params[:id]
-      render text: "off"
+      render text: "heart-off.png"
     else
       f << params[:id]
-      render text: "on"
+      render text: "heart-on.png"
     end
     cookies.permanent[:fav]=f.join(",")
   end
@@ -76,6 +76,5 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:Date, :Title, :category_id)
   end
-
 
 end

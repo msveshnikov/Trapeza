@@ -17,15 +17,4 @@ module RecipesHelper
     end
     return a
   end
-
-  def getfav(id)
-    s=cookies[:fav]
-    s="" if s.blank?
-    f=s.split(",")
-    if f.include? id.to_s
-      return "on"
-    else
-      return "off"
-    end
-  end
 end

@@ -16,4 +16,12 @@ module ApplicationHelper
     s="" if s.blank?
     return s.split(",")
   end
+
+  def getfav(id)
+    if getfavs.include? id.to_s
+      return "heart-on.png"
+    else
+      return "heart-off.png"
+    end
+  end
 end

@@ -4,10 +4,11 @@
   <%= @recipe.Title %>
 </h1>
 
-<%= link_to image_tag("star-"+getfav(@recipe.id)+".png", class: "fav", id: @recipe.id, style: "float=right;") %>
 
 <% if !ingredients.blank? %>
     <div class="breakoutr">
+      <!--Добавить в избранное:-->
+      <%= link_to image_tag(getfav(@recipe.id), title: "Добавить в избранное", class: "fav", id: @recipe.id) %>
       <h2>Ингредиенты:</h2>
       <% ingredients.each do |e| %>
           <h3> <%= e["name"] %> </h3>
@@ -36,18 +37,19 @@
        end %>
 <br><br>
 
-<% if !android_device? %>
-    Рейтинг:
-    <div id="star"></div>
-    <script>
-        $('#star').raty({
-            readOnly: true,
-            score: <%= @recipe.Rating %>,
-            path: '/assets'
-        });
-    </script>
-    <br>
 
+Рейтинг:
+<div id="star"></div>
+<script>
+    $('#star').raty({
+        readOnly: true,
+        score: <%= @recipe.Rating %>,
+        path: '/assets'
+    });
+</script>
+<br>
+
+<% if !android_device? %>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <g:plusone></g:plusone>
