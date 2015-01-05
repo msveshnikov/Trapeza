@@ -12,4 +12,5 @@ development:
 staging:
     cloud_name: "trapeza-tk"
     api_key: "843751178158314"
-    api_secret: "qOQj9c ghsrGaiAuxxAvTuHNfN4U"
+    api_secret: "qOQj9cghsrGaiAuxxAvTuHNfN4U"
+
