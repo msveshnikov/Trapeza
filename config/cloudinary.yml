@@ -7,3 +7,9 @@ development:
     cloud_name: "trapeza-tk"
     api_key: "843751178158314"
     api_secret: "qOQj9cghsrGaiAuxxAvTuHNfN4U"
+
+
+staging:
+    cloud_name: "trapeza-tk"
+    api_key: "843751178158314"
+    api_secret: "qOQj9cghsrGaiAuxxAvTuHNfN4U"
