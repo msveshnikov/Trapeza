@@ -12,4 +12,4 @@ Category.create(ParentCategory_ID: main, Title: "Итальянская кухн
 Category.create(ParentCategory_ID: main, Title: "Французская кухня", keywords: "устриц,франц,багет,круассан,луковый,париж,пармезан,марсель,бордо,беарн,фламбе")
 Category.create(ParentCategory_ID: main, Title: "Немецкая кухня", keywords: "немец,бавар,айнтопф,берлин,саксон,щницель,штрудель,штоллен,гамбург,мюнхен")
 Category.create(ParentCategory_ID: main, Title: "Японская кухня", keywords: "тофу,япон,васаби,суши,ролл,мисо,тамаго,воки,терияки,дзос,суси")
-Category.create(ParentCategory_ID: main, Title: "Латиноамериканская кухня", keywords: "испан,мексик,латин,бразил,буррит,текил,гуако,тортиль,паэлья,андалу,мадрид,,барселон,каталон,")
+Category.create(ParentCategory_ID: main, Title: "Латиноамериканская кухня", keywords: "испан,мексик,латин,бразил,буррит,текил,гуако,тортиль,паэлья,андалу,мадрид,барселон,каталон")
