@@ -3,11 +3,13 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def create
-    @comment = Comment.create(comment_params)
-    if @comment.save
-      flash[:success] = "Комментарий создан!"
-    else
-      flash[:error] = "Ошибка при создании комментария!"
+    @comment = Comment.new(comment_params)
+    if !(@comment.content.blank? && @comment.picture.blank?)
+      if @comment.save
+        flash[:success] = "Комментарий создан!"
+      else
+        flash[:error] = "Ошибка при создании комментария!"
+      end
     end
     redirect_to recipe_path(comment_params[:recipe_id])
   end

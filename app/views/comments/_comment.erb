@@ -15,7 +15,7 @@
       </span>
     <br>
     <br>
-    <%= image_tag comment.picture_url(:standard) %>
+    <%= image_tag comment.picture_url(mobile_device? ? :mobile : :standard) %>
 
   </td>
 </tr>
