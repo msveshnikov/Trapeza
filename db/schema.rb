@@ -11,28 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105053811) do
+ActiveRecord::Schema.define(version: 20150105165900) do
 
   create_table "categories", force: true do |t|
     t.text    "Title"
     t.integer "Rank"
     t.integer "ParentCategory_ID"
     t.integer "Language_ID"
-    t.string "keywords"
+    t.string  "keywords"
   end
 
   create_table "comments", force: true do |t|
-    t.string "content"
-    t.integer "user_id"
-    t.integer "recipe_id"
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
   end
 
   add_index "comments", ["recipe_id", "created_at"], name: "index_comments_on_recipe_id_and_created_at"
 
   create_table "ingredients", force: true do |t|
-    t.text "Title"
+    t.text    "Title"
     t.integer "Gramm"
     t.decimal "Proteins"
     t.decimal "Fats"
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150105053811) do
     t.decimal "Date"
     t.text    "Title"
     t.text    "TitleSearch"
-    t.binary "Description"
+    t.binary  "Description"
     t.text    "Media"
     t.text    "MediaVK"
     t.integer "Group_ID"
@@ -88,20 +89,20 @@ ActiveRecord::Schema.define(version: 20150105053811) do
   end
 
   create_table "users", force: true do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.string "oauth_token"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "email"
-    t.string "image"
+    t.string   "email"
+    t.string   "image"
   end
 
   create_table "visits", force: true do |t|
-    t.integer "recipe_id"
-    t.string "ip"
+    t.integer  "recipe_id"
+    t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

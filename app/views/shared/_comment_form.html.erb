@@ -1,7 +1,10 @@
 <%= form_for(@comment) do |f| %>
     <div class="field span5">
       <%= f.text_area :content, size: "30x5", placeholder: "Написать комментарий" %>
-    </div>
+
     <%= f.hidden_field :recipe_id %>
+      <%= f.hidden_field(:picture_cache) %>
+      <%= f.file_field(:picture) %>
+    </div>
     <%= f.submit "Отправить", class: "offset1 btn btn-large btn-primary" %>
 <% end %>

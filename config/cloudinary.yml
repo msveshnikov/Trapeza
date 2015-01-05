@@ -1,0 +1,9 @@
+production:
+  cloud_name: "trapeza-tk"
+  api_key: "843751178158314"
+  api_secret: "qOQj9cghsrGaiAuxxAvTuHNfN4U"
+
+development:
+    cloud_name: "trapeza-tk"
+    api_key: "843751178158314"
+    api_secret: "qOQj9cghsrGaiAuxxAvTuHNfN4U"

@@ -11,6 +11,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'breadcrumbs_on_rails'
 
+gem 'carrierwave'
+gem 'cloudinary'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3' #, group: :development
 #gem 'mysql2', group: [:production, :staging]
