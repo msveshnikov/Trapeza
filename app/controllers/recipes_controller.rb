@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   def index
+	add_breadcrumb "МЕНЮ", :root_path
 	if params[:search]
 	  @recipes = page(Recipe.search(params[:search]))
 	  redirect_to recipe_path(@recipes[0]) if @recipes.size==1

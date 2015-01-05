@@ -10,7 +10,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @recipes=page(@category.recipes)
+    @recipes=page(@category.recipes) if @category.keywords.blank?
+    @recipes=page(@category.keyword_recipes) if !@category.keywords.blank?
     @categories = @category.categories
   end
 
