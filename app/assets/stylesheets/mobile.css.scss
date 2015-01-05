@@ -24,7 +24,7 @@ h1 {
 h2 {
   font-family: 'Lobster', Times, serif;
   font-size: 1.3em;
-  letter-spacing: -1px;
+  //  letter-spacing: -1px;
   margin-bottom: 30px;
   margin-top: 30px;
   font-weight: normal;
@@ -93,6 +93,6 @@ input, textarea, button, select {
   -moz-border-radius: 10px;
 }
 
-.fav {
+.fav, .hot {
   float: right;
 }

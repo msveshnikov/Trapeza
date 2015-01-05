@@ -1,0 +1,14 @@
+<h2>
+  Популярные блюда сегодня:
+</h2>
+<%= render @today %>
+<br><br>
+<%= image_tag "divider.png" %>
+<br><br>
+<h2>
+  Популярное за всё время:
+</h2>
+<%= render @total %>
+
+<br>
+<%= link_to 'Главная', root_path %>

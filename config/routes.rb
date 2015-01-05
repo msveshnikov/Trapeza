@@ -8,6 +8,7 @@ Trapeza::Application.routes.draw do
   resources :users, only: :index
 
   get 'recipes/toggle/:id', to: 'recipes#toggle'
+  get 'recipes/popular', to: 'recipes#popular'
   resources :recipes
   resources :categories
   root 'categories#index'
