@@ -7,12 +7,15 @@ class Recipe < ActiveRecord::Base
 
   def self.search(query)
     query.gsub!(/['"%\\]/,"")
-    ing=Ingredient.where(Title: query.strip).first
+    query.strip!
+    query   ="zzzzzzzaaazzzzz" if query.blank?
+    query[0]=query[0].mb_chars.upcase
+    ing     =Ingredient.where(Title: query).first
     s=""
     if !ing.blank?
       s=" OR Ingredients LIKE '%\"id\":\"#{ing.id}\"%'"
     end
-    where("TitleSearch like '%#{query.strip.mb_chars.downcase}%'"+s)
+    where("TitleSearch like '%#{query.mb_chars.downcase}%'"+s)
   end
 
 end

@@ -9,5 +9,11 @@ $(document).on('page:change', function () {
         });
         return false;
     });
+
+    $('#search-form').submit(function () {
+        if ($('#search-field').val().length < 1) {
+            return false;
+        }
+    });
 });
 

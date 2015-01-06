@@ -42,8 +42,8 @@ end
 #TODO: mobile site +
 #TODO: ratings & votes +
 
-#TODO: post photo
+#TODO: post photo +
 #TODO: post comments +
 #TODO: create own recipes
-#TODO: search for ingredients
+#TODO: search for ingredients +
 #TODO: favourites in session cookie +
