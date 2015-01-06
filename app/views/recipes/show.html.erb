@@ -5,23 +5,18 @@
 </h1>
 
 
-<% if !ingredients.blank? %>
+<%- if !ingredients.blank? -%>
     <div class="breakoutr">
-      <!--Добавить в избранное:-->
       <%= link_to image_tag(getfav(@recipe.id), title: "Добавить в избранное", class: "fav", id: @recipe.id) %>
       <h2>Ингредиенты:</h2>
-      <% ingredients.each do |e| %>
+      <%- ingredients.each do |e| -%>
           <h3> <%= e["name"] %> </h3>
-          <% e["childs"].each do |l| %>
-              <%= l["id"] %>&nbsp
-              <%= l["count"] %>
-              <%= l["type"] %>
-              <%= l["comment"] %>
-              <br>
-          <% end %>
-      <% end %>
+          <%- e["childs"].each do |l| -%>
+              <%= l["id"] -%>&nbsp <%= l["count"] -%> <%= l["type"] -%> <%= l["comment"] -%> <br>
+          <%- end -%>
+      <%- end -%>
     </div>
-<% end %>
+<%- end -%>
 
 <p>
   <%= @recipe.Description.mb_chars.html_safe %>
@@ -32,7 +27,7 @@
         <p>
           <%= e["text_ru"].mb_chars.html_safe %>
         </p>
-        <%= image_tag e["src_big"], style: "max-width:100%;" %>
+        <%= image_tag e["src_big"].gsub("selcdn.ru", "selcdn.com"), style: "max-width:100%;" %>
     <% end
        end %>
 <br><br>
