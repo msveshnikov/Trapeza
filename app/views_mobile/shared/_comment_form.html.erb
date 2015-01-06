@@ -3,7 +3,7 @@
     <br>
     <%= f.hidden_field :recipe_id %>
     <%= f.hidden_field(:picture_cache) %>
-    <%= f.file_field(:picture, id: "file") %>
+    <%= f.file_field(:picture, id: "file") unless android_device? %>
     <br>
     <%= f.submit "Отправить" %>
 <% end %>
