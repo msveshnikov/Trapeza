@@ -82,7 +82,7 @@ class RecipesController < ApplicationController
 	@category = Category.find(@recipe.subcategory_id)
 	@parent   = Category.find(@category.ParentCategory_ID) if @category.ParentCategory_ID != 0
 	add_breadcrumb "МЕНЮ", :root_path
-	add_breadcrumb @parent.Title, @parent unless @parent.blank?
+	add_breadcrumb @parent.Title, @parent if @parent
 	add_breadcrumb @category.Title, @category
   end
 

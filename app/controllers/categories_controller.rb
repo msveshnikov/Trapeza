@@ -10,8 +10,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @recipes=page(@category.recipes) if @category.keywords.blank?
-    @recipes=page(@category.keyword_recipes) if !@category.keywords.blank?
+    @recipes=page(@category.recipes) if !@category.keywords
+    @recipes=page(@category.keyword_recipes) if @category.keywords
     @categories = @category.categories
   end
 
@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @parent = Category.find(@category.ParentCategory_ID) if @category.ParentCategory_ID != 0
     add_breadcrumb "МЕНЮ", :root_path
-    add_breadcrumb @parent.Title, @parent unless @parent.blank?
+    add_breadcrumb @parent.Title, @parent if @parent
   end
 
 end

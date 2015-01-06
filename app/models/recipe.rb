@@ -12,7 +12,7 @@ class Recipe < ActiveRecord::Base
     query[0]=query[0].mb_chars.upcase
     ing     =Ingredient.where(Title: query).first
     s=""
-    if !ing.blank?
+    if ing
       s=" OR Ingredients LIKE '%\"id\":\"#{ing.id}\"%'"
     end
     where("TitleSearch like '%#{query.mb_chars.downcase}%'"+s)
