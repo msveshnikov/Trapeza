@@ -13,7 +13,12 @@
 <body>
 
 <%= link_to image_tag("topsmall.jpg", style: "width:100%;"), root_path %>
-<h4> <%= postinfo %></h4>
+<% if cookies[:nopost]!="1" %>
+    <h4 class="box">
+      <a class="close"> <%= image_tag "close.png" %> </a>
+      <%= postinfo %>
+    </h4>
+<% end %>
 <ul class="breadcrumb">
   <%= render_breadcrumbs :tag => :li, :separator => "" %>
 </ul>

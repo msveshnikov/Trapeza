@@ -1,3 +1,13 @@
+function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
 $(document).on('page:change', function () {
     $('.fav').click(function () {
         $.ajax({
@@ -15,5 +25,12 @@ $(document).on('page:change', function () {
             return false;
         }
     });
+
+    $("h4.box a.close").click(function () {
+        createCookie('nopost', '1', 60);
+        $(this).parent("h4.box").fadeOut();
+        return false;
+    });
+
 });
 

@@ -2,10 +2,10 @@
 @import url('http://fonts.googleapis.com/css?family=Cuprum');
 
 body {
-  padding: 3px;
+  //padding: 3px;
   font-family: 'Cuprum', Verdana, Arial, Helvetica, sans-serif;
   font-size: 14pt;
-  margin: 10px;
+  //margin: 10px;
 }
 
 /* typography */
@@ -24,7 +24,6 @@ h1 {
 h2 {
   font-family: 'Lobster', Times, serif;
   font-size: 1.3em;
-  //  letter-spacing: -1px;
   margin-bottom: 30px;
   margin-top: 30px;
   font-weight: normal;
@@ -109,6 +108,6 @@ input, textarea, button, select {
   -moz-border-radius: 10px;
 }
 
-.fav, .hot {
+.fav, .hot, .close {
   float: right;
 }
