@@ -6,12 +6,12 @@ class Recipe < ActiveRecord::Base
   #default_scope -> { order('Rating DESC') }
 
   def self.search(query)
-    query.gsub!(/['"%\\]/,"")
+    query.gsub!(/['"%\\]/, "")
     query.strip!
     query   ="zzzzzzzaaazzzzz" if query.blank?
     query[0]=query[0].mb_chars.upcase
     ing     =Ingredient.where(Title: query).first
-    s=""
+    s =""
     if ing
       s=" OR Ingredients LIKE '%\"id\":\"#{ing.id}\"%'"
     end
