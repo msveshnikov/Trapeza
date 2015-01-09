@@ -28,7 +28,7 @@
 </script>
 <%= link_to image_tag("top.jpg"), root_path %>
 
-<% if cookies[:nopost]!="1" %>
+<% if postinfo && cookies[:nopost]!="1" %>
     <h4 class="box">
       <a class="close"> <%= image_tag "close.png" %> </a>
       <%= postinfo %>

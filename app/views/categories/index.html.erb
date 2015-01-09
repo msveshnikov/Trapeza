@@ -3,7 +3,7 @@
 <%= render 'shared/search' %>
 
 <%= link_to image_tag("hot.png", title: "Популярное", class: "hot"), recipes_popular_path %>
-<h1><%= "ПОСТНОЕ" if params[:post]=="1" %> МЕНЮ</h1>
+<h1><%= "ПОСТНОЕ" if post_menu? %> МЕНЮ</h1>
 
 
 <div class="words">
@@ -17,11 +17,13 @@
 
   <% @categories.each do |category| %>
       <h2><%= category.Title %></h2>
-      <%= render category.categories %>
+      <%= render category.categories.post(post_menu?) %>
       <%= render category if category.categories.blank? %>
   <% end %>
 
-  <br><br><br><br>
+  <br><br>
 </div>
+<h2><a href="/categories?post=<%= post_menu? ? 0 : 1 %>"> <%= post_menu? ? "ОБЫЧНОЕ" : "ПОСТНОЕ" %> МЕНЮ</a></h2>
+
 <br>
 © MaxSoft, 2015

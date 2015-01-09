@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
 	@recipe = Recipe.new(recipe_params)
 
 	if @recipe.save
-	  redirect_to @recipe, notice: 'Recipe was successfully created.'
+	  redirect_to @recipe, notice: 'Рецепт был создан успешно.'
 	else
 	  render action: 'new'
 	end
@@ -66,14 +66,14 @@ class RecipesController < ApplicationController
 	cookies.permanent[:fav]=f.join(",")
   end
 
-  # PATCH/PUT /recipes/1
-  # def update
-  #   if @recipe.update(recipe_params)
-  #     redirect_to @recipe, notice: 'Recipe was successfully updated.'
-  #   else
-  #     render action: 'edit'
-  #   end
-  # end
+  #PATCH/PUT /recipes/1
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: 'Рецепт был обновлен успешно.'
+    else
+      render action: 'edit'
+    end
+  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -88,7 +88,7 @@ class RecipesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def recipe_params
-	params.require(:recipe).permit(:Date, :Title, :category_id)
+	params.require(:recipe).permit(:Date, :Title, :category_id, :IsNew)
   end
 
 end

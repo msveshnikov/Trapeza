@@ -61,6 +61,13 @@
     <br><br>
 <% end %>
 
+<% if false %>
+    <%= form_for(@recipe) do |f| %>
+        <%= f.check_box :IsNew %>
+        <%= f.submit "Отправить" %>
+    <% end %>
+<% end %>
+
 <% if @comments.count > 0 %>
     <h3>Комментариев (<%= @comments.count %>)</h3>
     <table>

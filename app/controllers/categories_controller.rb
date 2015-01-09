@@ -5,14 +5,14 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.where("ParentCategory_ID = 0")
+    @categories = Category.post(post_menu?).where("ParentCategory_ID = 0")
   end
 
   # GET /categories/1
   def show
-    @recipes=page(@category.recipes) if !@category.keywords
-    @recipes=page(@category.keyword_recipes) if @category.keywords
-    @categories = @category.categories
+    @recipes=page(@category.recipes.post(post_menu?)) if !@category.keywords
+    @recipes=page(@category.keyword_recipes.post(post_menu?)) if @category.keywords
+    @categories = @category.categories.post(post_menu?)
   end
 
   private
