@@ -51,7 +51,7 @@ end
 #TODO: post photo +
 #TODO: post comments +
 #TODO: create own recipes
-#TODO: vegetarian only menu
+#TODO: vegetarian only menu +
 #TODO: find specie of some ingredients
 #TODO: search for ingredients +
 #TODO: favourites in session cookie +

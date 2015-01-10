@@ -113,8 +113,12 @@ input, textarea, select, .uneditable-input {
   -moz-border-radius: 10px;
 }
 
-.fav, .hot, .close {
+.fav, .close {
   float: right;
+}
+
+.hot {
+  float: left;
 }
 
 //.breadcrumb {
