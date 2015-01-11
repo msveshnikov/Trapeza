@@ -36,5 +36,6 @@ gem 'bcrypt'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'thin'
 end
 
