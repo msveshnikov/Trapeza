@@ -5,6 +5,11 @@ module RecipesHelper
     JSON.parse(@recipe.Media)["photos"]
   end
 
+  def pic2(recipe)
+    a=JSON.parse(recipe.Media) #if recipe
+    return a["photos"].last["src_small"] #if recipe
+  end
+
   def ingredients
     a = JSON.parse(@recipe.Ingredients)
     a.each do |e|
