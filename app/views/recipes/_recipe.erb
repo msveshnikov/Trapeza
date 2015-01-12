@@ -1,4 +1,4 @@
 <div>
-  <%= image_tag pic2(recipe), class: "thumb" %>
-  <%= link_to recipe.Title, recipe %>
+  <%= link_to image_tag( pic2(recipe), class: "thumb"), recipe if !mobile_device? %>
+  <%= link_to recipe.Title, recipe, class:"recipe" %>
 </div>
