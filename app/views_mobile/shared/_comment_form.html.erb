@@ -1,9 +1,11 @@
 <%= form_for(@comment) do |f| %>
-    <%= f.text_field :content, placeholder: "Мое мнение", id: "comment" %>
+    <%= f.text_field :content, placeholder: "Мое мнение + фото блюда", id: "comment" %>
     <br>
     <%= f.hidden_field :recipe_id %>
     <%= f.hidden_field(:picture_cache) %>
-    <%= f.file_field(:picture, id: "file") %>
+    <div class="file_button_container">
+      <%= f.file_field(:picture, id: "file") %>
+    </div>
     <br>
     <%= f.submit "Отправить" %>
 <% end %>

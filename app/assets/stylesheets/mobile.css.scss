@@ -118,7 +118,19 @@ input, textarea, button, select {
   max-height: 30px;
 }
 
-
 .recipe {
   line-height: 2em;
+}
+
+.file_button_container, .file_button_container input {
+  height: 47px;
+  width: 47px;
+}
+
+.file_button_container {
+  background: transparent url(asset-path("cam.jpg")) left top no-repeat;
+}
+
+.file_button_container input {
+  opacity: 0;
 }

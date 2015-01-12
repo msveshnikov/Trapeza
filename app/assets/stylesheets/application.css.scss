@@ -21,7 +21,7 @@ h1 {
   font-size: 4em;
   margin-bottom: 30px;
   text-align: center;
-//  color: #791115;
+  //  color: #791115;
 }
 
 h2 {
@@ -129,4 +129,17 @@ input, textarea, select, .uneditable-input {
 
 .recipe {
   line-height: 40px;
+}
+
+.file_button_container, .file_button_container input {
+  height: 47px;
+  width: 47px;
+}
+
+.file_button_container {
+  background: transparent url(asset-path("cam.jpg")) left top no-repeat;
+}
+
+.file_button_container input {
+  opacity: 0;
 }
