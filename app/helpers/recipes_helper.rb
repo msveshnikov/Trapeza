@@ -6,8 +6,8 @@ module RecipesHelper
   end
 
   def pic2(recipe)
-    a=JSON.parse(recipe.Media) #if recipe
-    return a["photos"].last["src_small"] #if recipe
+    a=JSON.parse(recipe.Media)
+    return a["photos"].last["src_small"]
   end
 
   def ingredients

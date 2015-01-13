@@ -109,8 +109,12 @@ input, textarea, button, select {
   -moz-border-radius: 10px;
 }
 
-.fav, .hot, .close {
+.fav, .close {
   float: right;
+}
+
+.hot {
+  float: left;
 }
 
 .thumb {
