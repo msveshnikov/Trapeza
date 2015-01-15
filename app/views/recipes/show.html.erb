@@ -1,48 +1,53 @@
 <% provide(:title, @recipe.Title) %>
 
-<h1>
-  <%= @recipe.Title %>
-</h1>
+<div itemscope itemtype="http://schema.org/Recipe">
+
+  <h1 itemprop="name">
+    <%= @recipe.Title %>
+  </h1>
 
 
-<%- if !ingredients.blank? -%>
-    <div class="breakoutr">
-      <%= link_to image_tag(getfav(@recipe.id), title: "Добавить в избранное", class: "fav", id: @recipe.id) %>
-      <h2>Ингредиенты:</h2>
-      <%- ingredients.each do |e| -%>
-          <h3> <%= e["name"] %> </h3>
-          <%- e["childs"].each do |l| -%>
-              <%= l["id"] -%>&nbsp <%= l["count"] -%> <%= l["type"] -%> <%= l["comment"] -%> <br>
-          <%- end -%>
-      <%- end -%>
-    </div>
-<%- end -%>
+  <%- if !ingredients.blank? -%>
+      <div class="breakoutr">
+        <%= link_to image_tag(getfav(@recipe.id), title: "Добавить в избранное", class: "fav", id: @recipe.id) %>
+        <h2>Ингредиенты:</h2>
+        <%- ingredients.each do |e| -%>
+            <h3> <%= e["name"] %> </h3>
+            <%- e["childs"].each do |l| -%>
+                <div itemprop="ingredients">
+                  <%= l["id"] -%>&nbsp <%= l["count"] -%> <%= l["type"] -%> <%= l["comment"] -%> <br>
+                </div>
+            <%- end -%>
+        <%- end -%>
+      </div>
+  <%- end -%>
 
-<p>
-  <%= @recipe.Description.mb_chars.html_safe %>
-</p>
+  <p itemprop="recipeInstructions">
+    <%= @recipe.Description.mb_chars.html_safe %>
+  </p>
 
-<% if !steps.blank?
-     steps.each do |e| %>
-        <p>
-          <%= e["text_ru"].mb_chars.html_safe %>
-        </p>
-        <%= image_tag e["src_big"], style: "max-width:100%;" %>
-    <% end
-       end %>
-<br><br>
+  <% if !steps.blank?
+       steps.each do |e| %>
+          <p itemprop="recipeInstructions">
+            <%= e["text_ru"].mb_chars.html_safe %>
+          </p>
+          <%= image_tag e["src_big"], style: "max-width:100%;", itemprop: "image" %>
+      <% end
+         end %>
+  <br><br>
 
 
-Рейтинг:
-<div id="star"></div>
-<script>
-    $('#star').raty({
-        readOnly: true,
-        score: <%= @recipe.Rating %>,
-        path: '/assets'
-    });
-</script>
-<br>
+  Рейтинг:
+  <div id="star"></div>
+  <script>
+      $('#star').raty({
+          readOnly: true,
+          score: <%= @recipe.Rating %>,
+          path: '/assets'
+      });
+  </script>
+  <br>
+</div>
 
 <% if !android_device? %>
 
