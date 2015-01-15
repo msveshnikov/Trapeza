@@ -1,6 +1,6 @@
 <%= form_for(@comment) do |f| %>
     <div class="field span5">
-      <%= f.text_area :content, size: "30x5", placeholder: "Написать комментарий" %>
+      <%= f.text_area :content, size: "30x5", placeholder: "Мое мнение + фото блюда" %>
       <%= f.hidden_field :recipe_id %>
       <%= f.hidden_field(:picture_cache) %>
       <div class="file_button_container">
