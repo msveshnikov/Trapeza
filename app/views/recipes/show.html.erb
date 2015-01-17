@@ -57,12 +57,12 @@
     <div class="fb-like" data-href="<%= recipe_url @recipe %>"
          data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
+    <% if !request.host.include? "localhost" %>
     <!-- Put this script tag to the place, where the Share button will be -->
-    <script type="text/javascript">
-        <!--
-        document.write(VK.Share.button());
-        -->
-    </script>
+	<script type="text/javascript"><!--
+	document.write(VK.Share.button(false,{type: "round", text: "Сохранить"}));
+	--></script>
+	<% end %>
     <br><br>
 <% end %>
 

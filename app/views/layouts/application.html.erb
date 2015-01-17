@@ -17,11 +17,14 @@
       js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&appId=741644855925953&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-  <!-- Put this script tag to the <head> of your page -->
-  <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
 
 </head>
 <body>
+<script type="text/javascript">
+    VK.init({apiId: 4710282, onlyWidgets: true});
+</script>
 <%= link_to image_tag("top.jpg"), root_path %>
 
 <% if postinfo && cookies[:nopost]!="1" %>
