@@ -23,13 +23,17 @@ class RecipesController < ApplicationController
 
   def popular
     add_breadcrumb "МЕНЮ", :root_path
-    @today = Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
-	FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
-	WHERE created_at BETWEEN datetime("now","-1 day") AND datetime("now")
-	GROUP BY recipes.id ORDER BY c desc LIMIT 10')
-    @total = Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
-	FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
-	GROUP BY recipes.id ORDER BY c desc LIMIT 10')
+    @today = Rails.cache.fetch("today", expires_in: 8.hours) do
+      Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
+	  FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
+	  WHERE created_at BETWEEN datetime("now","-1 day") AND datetime("now")
+	  GROUP BY recipes.id ORDER BY c desc LIMIT 10')
+    end
+    @total = Rails.cache.fetch("total", expires_in: 24.hours) do
+      Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
+	  FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
+	  GROUP BY recipes.id ORDER BY c desc LIMIT 10')
+    end
   end
 
   # GET /recipes/new
