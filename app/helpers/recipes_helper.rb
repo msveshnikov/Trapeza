@@ -11,7 +11,8 @@ module RecipesHelper
   end
 
   def ingredients
-    a = JSON.parse(@recipe.Ingredients)
+    a = JSON.parse("[]")
+    a = JSON.parse(@recipe.Ingredients) unless @recipe.Ingredients.blank?
     a.each do |e|
       b = e["childs"]
       b.each do |l|
