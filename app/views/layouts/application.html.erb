@@ -8,24 +8,8 @@
   <meta name="description" content="Готовим дома. Коллекция кулинарных рецептов с фотографиями и советами по приготовлению, составом, рейтингом блюд">
   <meta name="keywords" content="рецепты, кулинарные, кулинария, кухня, салаты, блюда, закуски, торты, напитки">
 
-  <div id="fb-root"></div>
-  <script>(function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&appId=741644855925953&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-  <!-- Put this script tag to the <head> of your page -->
-  <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
-
-
 </head>
 <body>
-<script type="text/javascript">
-    VK.init({apiId: 4710282, onlyWidgets: true});
-</script>
 <%= link_to image_tag("top.jpg"), root_path %>
 
 <% if postinfo && cookies[:nopost]!="1" %>
