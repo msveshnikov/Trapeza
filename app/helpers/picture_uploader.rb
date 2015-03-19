@@ -3,7 +3,6 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   process convert: 'jpg'
   process tags: ['post_picture']
-  cloudinary_transformation :effect => "saturation"
 
   version :standard do
     process resize_to_fit: [350, 450, :north]
