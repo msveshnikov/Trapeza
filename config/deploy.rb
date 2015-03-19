@@ -10,7 +10,7 @@ set :bundle_flags, '--quiet'   # '--deployment --quiet' is the default
 set :deploy_to, '/home/ubuntu/trapeza'
 
 # Default value for :linked_files is []
-set :linked_files, %w{db/production.sqlite3}
+set :linked_files, %w(db/production.sqlite3)
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -22,7 +22,6 @@ set :linked_files, %w{db/production.sqlite3}
 set :keep_releases, 3
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 3 do
@@ -32,5 +31,4 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-
 end

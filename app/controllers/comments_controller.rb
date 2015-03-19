@@ -4,11 +4,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    if !(@comment.content.blank? && @comment.picture.blank?)
+    unless @comment.content.blank? && @comment.picture.blank?
       if @comment.save
-        flash[:success] = "Комментарий создан!"
+        flash[:success] = 'Комментарий создан!'
       else
-        flash[:error] = "Ошибка при создании комментария!"
+        flash[:error] = 'Ошибка при создании комментария!'
       end
     end
     redirect_to recipe_path(comment_params[:recipe_id])
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    flash[:success] = "Комментарий удален!"
+    flash[:success] = 'Комментарий удален!'
     redirect_to recipe_path(params[:recipe_id])
   end
 
