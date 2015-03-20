@@ -20,38 +20,38 @@ class ApplicationController < ActionController::Base
 
   def mobile_device?
     if session[:mobile_override]
-      (session[:mobile_override] == "1") || (session[:mobile_override] == "2")
+      (session[:mobile_override] == '1') || (session[:mobile_override] == '2')
     else
       (request.user_agent =~ /Mobile|webOS|Android/)
     end
   end
 
   def android_device?
-    (session[:mobile_override] == "2")
+    (session[:mobile_override] == '2')
   end
 
   def post_menu?
     session[:post] = params[:post] if params[:post]
-    session[:post] == "1"
+    session[:post] == '1'
   end
 
   def page(a)
-    #return a if mobile_device?
+    # return a if mobile_device?
     a.paginate(page: params[:page], per_page: mobile_device? ? 200 : 50)
   end
 end
 
-#TODO: ingredients +
-#TODO: breadcrumbs +
-#TODO: all attrs form recipes +
-#TODO: +1 button +
-#TODO: mobile site +
-#TODO: ratings & votes +
+# TODO: ingredients +
+# TODO: breadcrumbs +
+# TODO: all attrs form recipes +
+# TODO: +1 button +
+# TODO: mobile site +
+# TODO: ratings & votes +
 
-#TODO: post photo +
-#TODO: post comments +
-#TODO: create own recipes
-#TODO: vegetarian only menu +
-#TODO: find specie of some ingredients
-#TODO: search for ingredients +
-#TODO: favourites in session cookie +
+# TODO: post photo +
+# TODO: post comments +
+# TODO: create own recipes
+# TODO: vegetarian only menu +
+# TODO: find specie of some ingredients
+# TODO: search for ingredients +
+# TODO: favourites in session cookie +

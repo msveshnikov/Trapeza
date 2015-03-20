@@ -5,12 +5,10 @@ Trapeza::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   resources :comments, only: [:create, :destroy]
-  resources :users, only: :index
 
   get 'recipes/toggle/:id', to: 'recipes#toggle'
   get 'recipes/popular', to: 'recipes#popular'
   resources :recipes
   resources :categories
   root 'categories#index'
-
 end

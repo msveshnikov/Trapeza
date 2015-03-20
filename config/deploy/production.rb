@@ -1,4 +1,3 @@
 set :stage, :production
 
-server 'extender.tk', user: 'ubuntu', roles: %w{web app db}
-
+server 'extender.tk', user: 'ubuntu', roles: %w(web app db)

@@ -15,8 +15,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3' #, group: :development
-#gem 'mysql2', group: [:production, :staging]
+gem 'sqlite3' # , group: :development
+# gem 'mysql2', group: [:production, :staging]
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -38,4 +38,3 @@ group :development do
   gem 'capistrano-passenger'
   gem 'thin'
 end
-

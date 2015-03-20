@@ -5,10 +5,10 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   def index
-    add_breadcrumb "МЕНЮ", :root_path
+    add_breadcrumb 'МЕНЮ', :root_path
     if params[:search]
       @recipes = page(Recipe.search(params[:search]))
-      redirect_to recipe_path(@recipes[0]) if @recipes.size==1
+      redirect_to recipe_path(@recipes[0]) if @recipes.size == 1
     else
       @recipes = page(Recipe.all)
     end
@@ -22,17 +22,17 @@ class RecipesController < ApplicationController
   end
 
   def popular
-    add_breadcrumb "МЕНЮ", :root_path
-    @today = Rails.cache.fetch("today", expires_in: 8.hours) do
+    add_breadcrumb 'МЕНЮ', :root_path
+    @today = Rails.cache.fetch('today', expires_in: 8.hours) do
       Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
-	  FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
-	  WHERE created_at BETWEEN datetime("now","-1 day") AND datetime("now")
-	  GROUP BY recipes.id ORDER BY c desc LIMIT 10')
+    FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
+    WHERE created_at BETWEEN datetime("now","-1 day") AND datetime("now")
+    GROUP BY recipes.id ORDER BY c desc LIMIT 10')
     end
-    @total = Rails.cache.fetch("total", expires_in: 24.hours) do
+    @total = Rails.cache.fetch('total', expires_in: 24.hours) do
       Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
-	  FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
-	  GROUP BY recipes.id ORDER BY c desc LIMIT 10')
+    FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
+    GROUP BY recipes.id ORDER BY c desc LIMIT 10')
     end
   end
 
@@ -57,20 +57,20 @@ class RecipesController < ApplicationController
   end
 
   def toggle
-    s=cookies[:fav]
-    s="" if s.blank?
-    f=s.split(",")
+    s = cookies[:fav]
+    s = '' if s.blank?
+    f = s.split(',')
     if f.include? params[:id]
       f.delete params[:id]
-      render text: "heart-off.png"
+      render text: 'heart-off.png'
     else
       f << params[:id]
-      render text: "heart-on.png"
+      render text: 'heart-on.png'
     end
-    cookies.permanent[:fav]=f.join(",")
+    cookies.permanent[:fav] = f.join(',')
   end
 
-  #PATCH/PUT /recipes/1
+  # PATCH/PUT /recipes/1
   def update
     if @recipe.update(recipe_params)
       redirect_to @recipe, notice: 'Рецепт был обновлен успешно.'
@@ -80,12 +80,13 @@ class RecipesController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
     @recipe = Recipe.find(params[:id])
     @category = Category.find(@recipe.subcategory_id)
     @parent = Category.find(@category.ParentCategory_ID) if @category.ParentCategory_ID != 0
-    add_breadcrumb "МЕНЮ", :root_path
+    add_breadcrumb 'МЕНЮ', :root_path
     add_breadcrumb @parent.Title, @parent if @parent
     add_breadcrumb @category.Title, @category
   end
@@ -94,5 +95,4 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:Date, :Title, :category_id, :IsNew)
   end
-
 end
