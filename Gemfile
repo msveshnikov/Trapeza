@@ -13,6 +13,7 @@ gem 'breadcrumbs_on_rails'
 
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'rails_admin'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3' # , group: :development
