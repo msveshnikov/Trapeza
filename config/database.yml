@@ -28,7 +28,7 @@ production:
 staging:
   adapter: mysql2
   encoding: utf8
-  database: trapeza2
+  database: trapeza5
   username: root
   password: j262
 

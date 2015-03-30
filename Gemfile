@@ -18,7 +18,7 @@ gem 'rails_admin'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3' # , group: :development
 gem 'mysql2', group: [:production, :staging]
-gem 'yaml_db'
+#gem 'yaml_db'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

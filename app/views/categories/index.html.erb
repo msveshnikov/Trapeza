@@ -8,20 +8,22 @@
 
 <div class="words">
 
-  <% if !getfavs.blank? %>
-      <h2>Избранные рецепты</h2>
-      <% getfavs.each do |recipe| %>
-          <%= render Recipe.find(recipe) %>
-      <% end %>
-  <% end %>
+    <% if !getfavs.blank? %>
+        <h2>Избранные рецепты</h2>
+        <% getfavs.each do |recipe| %>
+            <%= render Recipe.find(recipe) %>
+        <% end %>
+    <% end %>
 
-  <% @categories.each do |category| %>
-      <h2><%= category.Title %></h2>
-      <%= render category.categories.post(post_menu?) %>
-      <%= render category if category.categories.blank? %>
-  <% end %>
+    <% cache do %>
+        <% @categories.each do |category| %>
+            <h2><%= category.Title %></h2>
+            <%= render category.categories.post(post_menu?) %>
+            <%= render category if category.categories.blank? %>
+        <% end %>
+    <% end %>
 
-  <br><br>
+    <br><br>
 </div>
 <%= image_tag "divider.png" %>
 <h2><a href="/categories?post=<%= post_menu? ? 0 : 1 %>"> <%= post_menu? ? "ОБЫЧНОЕ" : "ПОСТНОЕ" %> МЕНЮ</a></h2>

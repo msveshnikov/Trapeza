@@ -98,6 +98,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql2 (0.3.17)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -227,6 +228,7 @@ DEPENDENCIES
   carrierwave
   cloudinary
   jquery-rails
+  mysql2
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-vkontakte
