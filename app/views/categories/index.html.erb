@@ -15,7 +15,7 @@
         <% end %>
     <% end %>
 
-    <% cache do %>
+    <% cache ('t' + (post_menu? ? "1" : "0")) do %>
         <% @categories.each do |category| %>
             <h2><%= category.Title %></h2>
             <%= render category.categories.post(post_menu?) %>
