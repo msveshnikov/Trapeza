@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
     @today = Rails.cache.fetch('today', expires_in: 8.hours) do
       Recipe.find_by_sql('SELECT recipes.id,Title,Media,count(ip) as c
     FROM recipes INNER JOIN visits ON recipes.id = visits.recipe_id
-    WHERE created_at BETWEEN datetime("now","-1 day") AND datetime("now")
+    WHERE created_at BETWEEN now() - INTERVAL 1 day AND now()
     GROUP BY recipes.id ORDER BY c desc LIMIT 10')
     end
     @total = Rails.cache.fetch('total', expires_in: 14.days) do
