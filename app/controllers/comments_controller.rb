@@ -20,6 +20,11 @@ class CommentsController < ApplicationController
     redirect_to recipe_path(params[:recipe_id])
   end
 
+  # GET /comments/1
+  def show
+    redirect_to Comment.find(params[:id]).recipe
+  end
+
   private
 
   def comment_params

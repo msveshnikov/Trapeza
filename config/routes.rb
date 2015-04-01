@@ -4,7 +4,7 @@ Trapeza::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   resources :sessions, only: [:create, :destroy]
 
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :show]
 
   get 'recipes/toggle/:id', to: 'recipes#toggle'
   get 'recipes/popular', to: 'recipes#popular'
