@@ -2,6 +2,8 @@
 <html>
 <head>
   <title> <%= full_title(yield(:title)) %> </title>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cuprum">
   <%= stylesheet_link_tag "mobile" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -43,6 +45,6 @@
     </div>
 <% end %>
 
-<%= image_tag("footsmall2.jpg", style: "width:100%;") %>
+<%= link_to image_tag("footsmall2.jpg", style: "width:100%;"),'/recipes?utf8=✓&search=кулич' %>
 </body>
 </html>
