@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    unless @comment.content.blank? && @comment.picture.blank?
+    unless (@comment.content.blank? && @comment.picture.blank?) || !(request.user_agent =~ /Android/)
       if @comment.save
         flash[:success] = 'Комментарий создан!'
       else
